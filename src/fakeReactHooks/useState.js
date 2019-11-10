@@ -5,6 +5,8 @@ let calls = -1;
  * For testing purposes only. Put afterEach(clearState) or beforeEach(clearState)
  *  at top of test file if using in multiple tests so that you get a fresh version
  *  with every test.
+ *
+ * This method is akin to unmouning the React component using this hook
  */
 export const clearState = () => {
 	states.splice(0, states.length);
