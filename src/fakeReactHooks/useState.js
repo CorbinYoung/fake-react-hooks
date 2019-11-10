@@ -11,26 +11,18 @@ export const clearState = () => {
 	calls = -1;
 };
 
-const useState = defaultValue => {
+const useState = initialState => {
 	const callId = ++calls;
 
-	if (states[callId]) {
-		return states[callId];
-	}
+	if (states[callId]) return states[callId];
 
 	const setValue = newValue => {
-		let newState;
-
-		if (typeof newValue === 'function') {
-			newState = newValue(states[callId][0]);
-		} else {
-			newState = newValue;
-		}
+		const newState = typeof newValue === 'function' ? newValue(states[callId][0]) : newValue;
 		states[callId][0] = newState;
 		calls = -1;
 	};
 
-	const state = [defaultValue, setValue];
+	const state = [typeof initialState === 'function' ? initialState() : initialState, setValue];
 	states[callId] = state;
 	return state;
 };

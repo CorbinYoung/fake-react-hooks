@@ -1,6 +1,6 @@
 {
   "name": "fake-react-hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "corbin.young",
   "description": "Make fake react hooks to test custom hooks without rendering",
   "main": "index.js",
