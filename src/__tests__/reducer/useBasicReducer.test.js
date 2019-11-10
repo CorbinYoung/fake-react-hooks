@@ -1,8 +1,9 @@
+import { clearData } from '../../dataManager';
 import { render, act, clearHook } from '../../renderer';
+import useReducer from '../../fakeReactHooks/useReducer';
 import useBasicReducer from '../../exampleHooks/reducer/useBasicReducer';
-import useReducer, { clearReducer } from '../../fakeReactHooks/useReducer';
 
-afterEach(clearReducer);
+afterEach(clearData);
 
 afterAll(clearHook);
 

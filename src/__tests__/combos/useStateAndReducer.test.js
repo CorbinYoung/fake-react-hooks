@@ -1,12 +1,10 @@
+import { clearData } from '../../dataManager';
+import useState from '../../fakeReactHooks/useState';
 import { render, act, clearHook } from '../../renderer';
-import useState, { clearState } from '../../fakeReactHooks/useState';
-import useReducer, { clearReducer } from '../../fakeReactHooks/useReducer';
+import useReducer from '../../fakeReactHooks/useReducer';
 import { singleUpdater, dualUpdaters } from '../../exampleHooks/combos/useStateAndReducer';
 
-afterEach(() => {
-	clearState();
-	clearReducer();
-});
+afterEach(clearData);
 
 afterAll(clearHook);
 
