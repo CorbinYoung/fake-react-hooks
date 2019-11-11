@@ -1,8 +1,9 @@
+import { clearData } from '../../dataManager';
+import useState from '../../fakeReactHooks/useState';
 import { render, act, clearHook } from '../../renderer';
-import useState, { clearState } from '../../fakeReactHooks/useState';
 import useSingleState from '../../exampleHooks/state/useSingleState';
 
-afterEach(clearState);
+afterEach(clearData);
 
 afterAll(clearHook);
 

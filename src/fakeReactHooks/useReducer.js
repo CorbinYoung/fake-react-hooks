@@ -1,30 +1,22 @@
-const states = [];
-let calls = -1;
+import { data, incrementCalls } from '../dataManager';
 
-/*
- * For testing purposes only. Put afterEach(clearReducer) or beforeEach(clearReducer)
- *  at top of test file if using in multiple tests so that you get a fresh version
- *  with every test.
+/**
  *
- * This method is akin to unmounting the React component using this hook
+ * @param {function} reducer Method to handle how to update the new state
+ * @param {*} initialState The initial state
+ * @param {function} init Method to create the initial state
  */
-export const clearReducer = () => {
-	states.splice(0, states.length);
-	calls = -1;
-};
-
 const useReducer = (reducer, initialState, init) => {
-	const callId = ++calls;
+	const callId = incrementCalls();
 
-	if (states[callId]) return states[callId];
+	if (data[callId]) return data[callId];
 
 	const dispatch = action => {
-		states[callId][0] = reducer(states[callId][0], action);
-		calls = -1;
+		data[callId][0] = reducer(data[callId][0], action);
 	};
 
 	const state = [init ? init(initialState) : initialState, dispatch];
-	states[callId] = state;
+	data[callId] = state;
 	return state;
 };
 
