@@ -1,5 +1,8 @@
 import { data, incrementCalls } from '../dataManager';
 
+/**
+ * @param {*} initialState The initial state
+ */
 const useState = initialState => {
 	const callId = incrementCalls();
 
