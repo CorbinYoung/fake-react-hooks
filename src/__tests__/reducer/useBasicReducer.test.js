@@ -1,11 +1,6 @@
-import { clearData } from '../../dataManager';
-import { render, act, clearHook } from '../../renderer';
+import { render, act } from '../../renderer';
 import useReducer from '../../fakeReactHooks/useReducer';
 import useBasicReducer from '../../exampleHooks/reducer/useBasicReducer';
-
-afterEach(clearData);
-
-afterAll(clearHook);
 
 it('can accurately track the state', () => {
 	let [state, dispatch] = render(useBasicReducer(useReducer));

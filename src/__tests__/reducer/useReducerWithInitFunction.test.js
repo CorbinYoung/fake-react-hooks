@@ -1,11 +1,6 @@
-import { clearData } from '../../dataManager';
-import { render, act, clearHook } from '../../renderer';
+import { render, act } from '../../renderer';
 import useReducer from '../../fakeReactHooks/useReducer';
 import useReducerWithInitFunction from '../../exampleHooks/reducer/useReducerWithInitFunction';
-
-afterEach(clearData);
-
-afterAll(clearHook);
 
 it('can correctly track state beginning with init', () => {
 	let [state, dispatch] = render(useReducerWithInitFunction(useReducer));

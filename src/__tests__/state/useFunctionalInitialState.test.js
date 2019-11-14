@@ -1,11 +1,6 @@
-import { clearData } from '../../dataManager';
 import useState from '../../fakeReactHooks/useState';
-import { render, act, clearHook } from '../../renderer';
+import { render, act } from '../../renderer';
 import useFunctionalInitialState from '../../exampleHooks/state/useFunctionalInitialState';
-
-afterEach(clearData);
-
-afterAll(clearHook);
 
 it('sets the correct state using the functional initial state', () => {
 	let [value, setValue] = render(useFunctionalInitialState(useState));

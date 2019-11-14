@@ -1,11 +1,9 @@
+import { render, act } from '../../renderer';
 import { clearData } from '../../dataManager';
 import useState from '../../fakeReactHooks/useState';
-import { render, act, clearHook } from '../../renderer';
 import { useWithFunctionalSetter, useWithoutFunctionalSetter } from '../../exampleHooks/state/useFunctionalSetter';
 
 afterEach(clearData);
-
-afterAll(clearHook);
 
 // This is what happens when you try to update the state in React in one render and don't use the functional setter
 it("cannot update state multiple times in one 'render'", () => {

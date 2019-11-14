@@ -1,12 +1,10 @@
+import { render, act } from '../../renderer';
 import { clearData } from '../../dataManager';
 import useState from '../../fakeReactHooks/useState';
-import { render, act, clearHook } from '../../renderer';
 import useReducer from '../../fakeReactHooks/useReducer';
 import { singleUpdater, dualUpdaters } from '../../exampleHooks/combos/useStateAndReducer';
 
 afterEach(clearData);
-
-afterAll(clearHook);
 
 it('works with one method to update both states', () => {
 	let [state, isTrue, doSomething] = render(singleUpdater(useState, useReducer));

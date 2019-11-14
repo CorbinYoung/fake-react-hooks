@@ -1,11 +1,6 @@
-import { clearData } from '../../dataManager';
-import { render, act, clearHook } from '../../renderer';
+import { render, act } from '../../renderer';
 import useReducer from '../../fakeReactHooks/useReducer';
 import useMultipleReducers from '../../exampleHooks/reducer/useMultipleReducers';
-
-afterEach(clearData);
-
-afterAll(clearHook);
 
 it('can track multiple states using multiple reducers', () => {
 	let [state1, state2, dispatch1, dispatch2] = render(useMultipleReducers(useReducer));
