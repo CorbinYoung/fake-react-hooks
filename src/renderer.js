@@ -30,8 +30,3 @@ export const act = (hookMethod, props) => {
 	resetCalls();
 	return currentHook(props);
 };
-
-/** Wipes the current hook */
-export const clearHook = () => {
-	currentHook = null;
-};

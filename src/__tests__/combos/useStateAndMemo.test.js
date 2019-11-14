@@ -1,12 +1,7 @@
-import { clearData } from '../../dataManager';
+import { render, act } from '../../renderer';
 import useMemo from '../../fakeReactHooks/useMemo';
 import useState from '../../fakeReactHooks/useState';
-import { render, act, clearHook } from '../../renderer';
 import useStateAndMemo from '../../exampleHooks/combos/useStateAndMemo';
-
-afterEach(clearData);
-
-afterAll(clearHook);
 
 it('updates the memoized value based on state', () => {
 	const fakeFunc = jest.fn(x => x * x);

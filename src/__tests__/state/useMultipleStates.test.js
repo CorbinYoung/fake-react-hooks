@@ -1,11 +1,9 @@
+import { render, act } from '../../renderer';
 import { clearData } from '../../dataManager';
 import useState from '../../fakeReactHooks/useState';
-import { render, act, clearHook } from '../../renderer';
 import useMultipleStates from '../../exampleHooks/state/useMultipleStates';
 
 afterEach(clearData);
-
-afterAll(clearHook);
 
 it('the useState hook correctly tracks all states', () => {
 	let [value1, value2, value3, value4, rotateValues] = render(useMultipleStates(useState));
