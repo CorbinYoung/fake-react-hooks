@@ -1,4 +1,4 @@
-import { resetCalls } from './dataManager';
+import { resetCalls, storage } from './dataManager';
 
 let currentHook = null;
 
@@ -29,4 +29,12 @@ export const act = (hookMethod, props) => {
 	hookMethod();
 	resetCalls();
 	return currentHook(props);
+};
+
+export const unmount = () => {
+	storage.hasUnmount
+		.filter(v => v != undefined)
+		.forEach(index => {
+			storage.data[index][0]();
+		});
 };

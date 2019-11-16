@@ -1,5 +1,5 @@
 // This is the substitute for React that manages all of the states for every hook in one "component"
-export const data = [];
+export const storage = { data: [], hasUnmount: [] };
 let calls = -1;
 
 // Each new hook will need to call this to make sure it has it's own index in the data array
@@ -16,6 +16,7 @@ export const resetCalls = () => {
  * This method is akin to unmouning the React component using this hook
  */
 export const clearData = () => {
-	data.splice(0, data.length);
+	storage.data.splice(0, storage.data.length);
+	storage.hasUnmount.splice(0, storage.hasUnmount.length);
 	calls = -1;
 };

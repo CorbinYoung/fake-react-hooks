@@ -1,10 +1,12 @@
-import { data, incrementCalls } from '../dataManager';
+import { storage, incrementCalls } from '../dataManager';
 
 /**
  * @param {*} initialState The initial state
  */
 const useState = initialState => {
 	const callId = incrementCalls();
+
+	const { data } = storage;
 
 	if (data[callId]) return data[callId];
 
