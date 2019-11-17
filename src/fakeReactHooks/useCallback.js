@@ -1,5 +1,5 @@
 import { arraysMatch } from '../utils';
-import { data, incrementCalls } from '../dataManager';
+import { storage, incrementCalls } from '../dataManager';
 
 /**
  * @param {function} func The function to be cached
@@ -7,6 +7,8 @@ import { data, incrementCalls } from '../dataManager';
  */
 const useCallback = (func, deps) => {
 	const callId = incrementCalls();
+
+	const { data } = storage;
 
 	if (!data[callId] || !deps || (deps.length > 0 && !arraysMatch(data[callId][1], deps))) {
 		data[callId] = [func, deps];

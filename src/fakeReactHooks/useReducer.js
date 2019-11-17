@@ -1,4 +1,4 @@
-import { data, incrementCalls } from '../dataManager';
+import { storage, incrementCalls } from '../dataManager';
 
 /**
  *
@@ -8,6 +8,8 @@ import { data, incrementCalls } from '../dataManager';
  */
 const useReducer = (reducer, initialState, init) => {
 	const callId = incrementCalls();
+
+	const { data } = storage;
 
 	if (data[callId]) return data[callId];
 
