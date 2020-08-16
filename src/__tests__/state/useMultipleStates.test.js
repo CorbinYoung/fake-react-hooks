@@ -52,7 +52,7 @@ it("cannot update values correctly multiple times in one 'render'", () => {
 	expect(value3).toBe(4);
 	expect(value4).toBe(1);
 
-	[value1, value2, value3, value4] = act(rotateValues);
+	[value1, value2, value3, value4] = act(rotateValues); // This method is created in every render, but you're still using the one from the first render, so the state values will be the same. See above test for correct functionality
 	expect(value1).toBe(2);
 	expect(value2).toBe(3);
 	expect(value3).toBe(4);

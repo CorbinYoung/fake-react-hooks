@@ -26,5 +26,5 @@ it('can accurately track the state', () => {
 	expect(state).toBe(10);
 
 	[state] = act(() => dispatch({ type: 'RESET' }));
-	expect(state).toBe(0);
+	expect(state).toBe(10);
 });

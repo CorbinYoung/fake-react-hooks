@@ -14,9 +14,7 @@ expect.extend({
 
 		const pass = received === expected;
 		return {
-			message: () =>
-				this.utils.matcherHint('.toEqualFunction') +
-				`\n\nexpected ${received} to ${pass ? 'not ' : ''}match ${expected} // received === expected`,
+			message: () => `${this.utils.matcherHint('.toEqualFunction')}\n\nexpected ${received} to ${pass ? 'not ' : ''}match ${expected} // received === expected`,
 			pass
 		};
 	}

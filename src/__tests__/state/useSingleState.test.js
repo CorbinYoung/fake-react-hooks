@@ -3,13 +3,13 @@ import { render, act } from '../../renderer';
 import useSingleState from '../../exampleHooks/state/useSingleState';
 
 it('works with custom state hook', () => {
-	const [firstRender, setTrue, setFalse] = render(useSingleState(useState));
+	let [isTrue, setTrue, setFalse] = render(useSingleState(useState));
 
-	expect(firstRender).toBeFalsy();
+	expect(isTrue).toBeFalsy();
 
-	const [secondRender] = act(setTrue);
-	expect(secondRender).toBeTruthy();
+	[isTrue] = act(setTrue);
+	expect(isTrue).toBeTruthy();
 
-	const [thirdRender] = act(setFalse);
-	expect(thirdRender).toBeFalsy();
+	[isTrue] = act(setFalse);
+	expect(isTrue).toBeFalsy();
 });

@@ -1,3 +1,5 @@
+const initialState = 10;
+
 const reducer = (state, { type }) => {
 	switch (type) {
 		case 'INCREMENT':
@@ -5,10 +7,10 @@ const reducer = (state, { type }) => {
 		case 'DECREMENT':
 			return state - 1;
 		case 'RESET':
-			return 0;
+			return initialState;
 		default:
 			return state;
 	}
 };
 
-export default useReducerHook => () => useReducerHook(reducer, 10);
+export default useReducerHook => () => useReducerHook(reducer, initialState);

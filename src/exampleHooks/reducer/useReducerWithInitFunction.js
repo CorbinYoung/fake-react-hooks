@@ -1,16 +1,18 @@
-const init = value => ({ value });
+const initialState = 10;
 
-const reducer = (state, { type, payload }) => {
+const init = value => value;
+
+const reducer = (state, { type }) => {
 	switch (type) {
 		case 'INCREMENT':
-			return { value: state.value + 1 };
+			return state + 1;
 		case 'DECREMENT':
-			return { value: state.value - 1 };
+			return state - 1;
 		case 'RESET':
-			return init(payload);
+			return init(initialState);
 		default:
 			return state;
 	}
 };
 
-export default useReducerHook => () => useReducerHook(reducer, 10, init);
+export default useReducerHook => () => useReducerHook(reducer, initialState, init);

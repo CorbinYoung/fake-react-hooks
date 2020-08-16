@@ -5,23 +5,20 @@ import useReducerWithInitFunction from '../../exampleHooks/reducer/useReducerWit
 it('can correctly track state beginning with init', () => {
 	let [state, dispatch] = render(useReducerWithInitFunction(useReducer));
 
-	expect(state).toEqual({ value: 10 });
+	expect(state).toEqual(10);
 
 	[state] = act(() => dispatch({ type: 'INCREMENT' }));
-	expect(state).toEqual({ value: 11 });
+	expect(state).toEqual(11);
 
 	[state] = act(() => dispatch({ type: 'INCREMENT' }));
-	expect(state).toEqual({ value: 12 });
+	expect(state).toEqual(12);
 
 	[state] = act(() => dispatch({ type: 'SOME_RANDOM_STRING' }));
-	expect(state).toEqual({ value: 12 });
+	expect(state).toEqual(12);
 
 	[state] = act(() => dispatch({ type: 'DECREMENT' }));
-	expect(state).toEqual({ value: 11 });
+	expect(state).toEqual(11);
 
-	[state] = act(() => dispatch({ type: 'DECREMENT' }));
-	expect(state).toEqual({ value: 10 });
-
-	[state] = act(() => dispatch({ type: 'RESET', payload: 0 }));
-	expect(state).toEqual({ value: 0 });
+	[state] = act(() => dispatch({ type: 'RESET' }));
+	expect(state).toEqual(10);
 });
