@@ -4,6 +4,7 @@ import { storage, incrementCalls } from '../dataManager';
 /**
  * @param {function} func The function to be cached
  * @param {array} deps The dependencies that will cause the hook to re-cache the value
+ * @returns {function} The cached function
  */
 const useCallback = (func, deps) => {
 	const callId = incrementCalls();

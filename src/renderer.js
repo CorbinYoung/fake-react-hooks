@@ -32,9 +32,6 @@ export const act = (hookMethod, props) => {
 };
 
 export const unmount = () => {
-	storage.hasUnmount
-		.filter(v => v != undefined)
-		.forEach(index => {
-			storage.data[index][0]();
-		});
+	storage.hasUnmount.filter(v => v != undefined).forEach(index => storage.data[index][0]()); // Call the unmount method for any hooks that have them
+	currentHook = null;
 };

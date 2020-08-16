@@ -2,6 +2,7 @@ import { storage, incrementCalls } from '../dataManager';
 
 /**
  * @param {*} initialState The initial state
+ * @returns {[object, function]} The current state and a function with which to modify the state
  */
 const useState = initialState => {
 	const callId = incrementCalls();

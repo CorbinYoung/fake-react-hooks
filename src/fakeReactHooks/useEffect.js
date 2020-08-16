@@ -12,8 +12,7 @@ const useEffect = (func, deps) => {
 
 	if (!data[callId] || !deps || (deps.length > 0 && !arraysMatch(data[callId][1], deps))) {
 		if (data[callId] && typeof data[callId][0] === 'function') data[callId][0]();
-		const returnFunc = func();
-		data[callId] = [returnFunc, deps];
+		data[callId] = [func(), deps];
 		hasUnmount[callId] = callId;
 	}
 };
