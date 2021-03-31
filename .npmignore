@@ -2,10 +2,13 @@
 
 # testing
 /coverage
-/src/__tests__
+/tests
 
 # production
-/build
+#/build
 
 # examples
-/src/exampleHooks
+/exampleHooks
+
+# IDE configurations
+.vscode/
