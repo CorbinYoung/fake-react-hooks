@@ -4,9 +4,6 @@
 /coverage
 /tests
 
-# production
-#/build
-
 # examples
 /exampleHooks
 
