@@ -2,10 +2,16 @@
 
 # testing
 /coverage
-/src/__tests__
+/tests
 
-# production
-/build
+# source code
+/src
 
 # examples
-/src/exampleHooks
+/exampleHooks
+
+# configurations
+.vscode/
+*.config.js
+tsconfig.json
+.prettierrc.json

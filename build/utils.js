@@ -1,0 +1,11 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.arraysMatch = void 0;
+
+const arraysMatch = (prev, next) => prev.length === next.length && prev.reduce((accum, curVal, curInd) => accum && curVal === next[curInd], true);
+
+exports.arraysMatch = arraysMatch;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy91dGlscy50cyJdLCJuYW1lcyI6WyJhcnJheXNNYXRjaCIsInByZXYiLCJuZXh0IiwibGVuZ3RoIiwicmVkdWNlIiwiYWNjdW0iLCJjdXJWYWwiLCJjdXJJbmQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBTyxNQUFNQSxXQUFXLEdBQUcsQ0FBQ0MsSUFBRCxFQUFjQyxJQUFkLEtBQzFCRCxJQUFJLENBQUNFLE1BQUwsS0FBZ0JELElBQUksQ0FBQ0MsTUFBckIsSUFBK0JGLElBQUksQ0FBQ0csTUFBTCxDQUFZLENBQUNDLEtBQUQsRUFBUUMsTUFBUixFQUFnQkMsTUFBaEIsS0FBMkJGLEtBQUssSUFBSUMsTUFBTSxLQUFLSixJQUFJLENBQUNLLE1BQUQsQ0FBL0QsRUFBeUUsSUFBekUsQ0FEekIiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgYXJyYXlzTWF0Y2ggPSAocHJldjogYW55W10sIG5leHQ6IGFueVtdKSA9PlxuXHRwcmV2Lmxlbmd0aCA9PT0gbmV4dC5sZW5ndGggJiYgcHJldi5yZWR1Y2UoKGFjY3VtLCBjdXJWYWwsIGN1ckluZCkgPT4gYWNjdW0gJiYgY3VyVmFsID09PSBuZXh0W2N1ckluZF0sIHRydWUpO1xuIl19
