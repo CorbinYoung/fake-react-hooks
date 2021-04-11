@@ -1,5 +1,5 @@
 module.exports = {
-	collectCoverageFrom: ['src/**/*.js'],
+	collectCoverageFrom: ['src/**/*.ts', '!src/index.ts'],
 	setupFilesAfterEnv: ['./jest/customMatchers.js'],
 	coverageThreshold: {
 		global: {
