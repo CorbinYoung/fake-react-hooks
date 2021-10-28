@@ -1,23 +1,24 @@
 import { storage, incrementCalls } from '../dataManager';
+import type { InitState, BasicStateAction, Dispatch } from '../customTypes';
 
 /**
  * @param initialState The initial state
  * @returns The current state and a function with which to modify the state
  */
-const useState = (initialState: any): [any, (newState: any) => any] => {
-	const callId = incrementCalls();
+const useState = <S>(initialState: InitState<S>): [S, Dispatch<BasicStateAction<S>>] => {
+  const callId = incrementCalls();
 
-	const { data } = storage;
+  const { data } = storage;
 
-	if (data[callId]) return data[callId];
+  if (data[callId]) return data[callId];
 
-	const setValue = (newState: any) => {
-		data[callId][0] = typeof newState === 'function' ? newState(data[callId][0]) : newState;
-	};
+  const setValue = (newState: BasicStateAction<S>) => {
+    data[callId][0] = typeof newState === 'function' ? newState(data[callId][0]) : newState;
+  };
 
-	const state: [any, (newState: any) => any] = [typeof initialState === 'function' ? initialState() : initialState, setValue];
-	data[callId] = state;
-	return state;
+  const state: [S, Dispatch<BasicStateAction<S>>] = [typeof initialState === 'function' ? initialState() : initialState, setValue];
+  data[callId] = state;
+  return state;
 };
 
 export default useState;

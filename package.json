@@ -1,15 +1,15 @@
 {
 	"name": "fake-react-hooks",
-	"version": "0.6.9",
+	"version": "0.7.0",
 	"author": "corbin.young",
 	"description": "Make fake react hooks to test custom hooks without rendering",
 	"types": "build/index.d.ts",
 	"main": "build/index.js",
-  "module": "build/index.js",
-  "files": [
-    "/build",
-    "/jest"
-  ],
+	"module": "build/index.js",
+	"files": [
+		"/build",
+		"/jest"
+	],
 	"scripts": {
 		"lint": "tslint -c tslint.config.js 'src/**/*.ts",
 		"test": "jest --colors",
@@ -42,7 +42,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "npm run lint",
-			"pre-push": "npm run test:coverage"
+			"pre-push": "npm run build && npm run test:coverage"
 		}
 	},
 	"keywords": [

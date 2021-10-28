@@ -12,16 +12,17 @@ export const incrementCalls = () => ++calls;
 
 // This will be called any time a hook "rerenders" to update everything in data
 export const resetCalls = () => {
-	calls = -1;
+  calls = -1;
 };
 
-/** Put afterEach(clearData) at top of any test file that uses multiple tests
+/**
+ * Put afterEach(clearData) at top of any test file that uses multiple tests
  * 	so that you get a fresh version of data with every test.
  *
  * This method is akin to unmouning the React component using this hook
  */
 export const clearData = () => {
-	storage.data.splice(0, storage.data.length);
-	storage.hasUnmount.splice(0, storage.hasUnmount.length);
-	calls = -1;
+  storage.data.splice(0, storage.data.length);
+  storage.hasUnmount.splice(0, storage.hasUnmount.length);
+  calls = -1;
 };

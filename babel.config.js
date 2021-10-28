@@ -4,7 +4,7 @@ module.exports = {
       '@babel/env',
 			{ targets: { node: 'current' } }
 		],
-    '@babel/typescript',
+    '@babel/typescript'
 	],
   plugins: [
     '@babel/proposal-class-properties',
